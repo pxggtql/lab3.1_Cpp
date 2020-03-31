@@ -56,12 +56,11 @@ void str2Bin(string sendStr,int j)
 }
 int main()
 {
-    cout<<"[Sending]......"<<endl<<"Input your message(0110XXXXXXXXXXXXXXXXXXXX110)"<<endl;
+    cout<<"[Sending]......"<<endl<<"Input your message(0110XXXXXXXXXXXXXXXXXXXXXXXXX110)"<<endl;
     string sendStr;
     cin>>sendStr;
     cout<<"Send string is "<<sendStr<<endl;
-    string sendStr1="00000"+sendStr;
-    str2Bin(sendStr1,4);
+    str2Bin(sendStr,4);
     unsigned int crcResult=crc16(senddata,4);
     string crcStr=bin2Str(crcResult);
     cout<<"CRC mode is CRC-CCITT poly is 0b10001000000100001"<<endl;
@@ -69,8 +68,7 @@ int main()
     string receiveStr=sendStr+crcStr;
     cout<<"[Receiving]......"<<endl;
     cout<<"Receive message is "<<receiveStr<<endl;
-    string receiveStr1="00000"+receiveStr;
-    str2Bin(receiveStr1,6);
+    str2Bin(receiveStr,6);
     crcResult=crc16(senddata,6);
     cout<<"CRC mode is CRC-CCITT poly is 0b10001000000100001"<<endl;
     crcStr=bin2Str(crcResult);
