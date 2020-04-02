@@ -1,0 +1,6 @@
+0000000001100101
+[Message]Server wait response...
+[Error]Receiver receive a wrong frame!Resending
+[Success]Receiver receive a frame correctly!
+[Message]frame number is 12812
+
